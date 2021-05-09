@@ -22,5 +22,4 @@ public class JPAConfiguration {
     public ProductService productService() {
         return new ProductServiceImpl();
     }
-
 }

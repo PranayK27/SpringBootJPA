@@ -20,4 +20,9 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAllBetweenStoredProcedure(min, max);
     }
 
+    @Override
+    public List<Product> findTopN(int n) {
+        return productRepository.findTopN(n);
+    }
+
 }

@@ -14,4 +14,10 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
     @Query(value = "{call sp_findBetween(:min, :max)}", nativeQuery = true)
     public List<Product> findAllBetweenStoredProcedure(@Param("min") BigDecimal min, @Param("max") BigDecimal max);
 
+    @Query(value = "{call sp_findAll()}", nativeQuery = true)
+    public List<Product> findAllWithStoredProcedure();
+
+    @Query(value = "SELECT * FROM product order by id desc limit :limit", nativeQuery = true)
+    public List<Product> findTopN(@Param("limit") int limit);
+
 }

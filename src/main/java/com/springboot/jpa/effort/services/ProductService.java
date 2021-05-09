@@ -7,4 +7,6 @@ public interface ProductService {
 
     public List<Product> findAllBetweenStoredProcedure(BigDecimal min, BigDecimal max);
 
+    public List<Product> findTopN(int n);
+
 }
